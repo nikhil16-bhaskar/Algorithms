@@ -30,7 +30,9 @@ int main(){
     long long int c,result;
     long long int d,add;
     long long int e,addition;
-    cin >> a >> b >> c >> d >> e;
+    long long int f[5];
+    cin>>f[0]>>f[1]>>f[2]>>f[3]>>f[4];
+  /*  cin >> a >> b >> c >> d >> e;
     sum=a+b+c+d;
     flag=b+c+d+e;
     result=c+d+e+a;
@@ -53,7 +55,21 @@ int main(){
          else if(addition>sum && addition>result && addition>add && addition>flag)
         cout<<flag;
          else if(add>sum && add>result && add>flag && add> addition)
-        cout<<flag;
+        cout<<flag;*/
+     for(int i=0;i<4;i++)
+   {
+        for(int j=0;j<4-i;j++)
+        {
+            if(f[j] > f[j+1]){
+                long long int temp = f[j];
+                f[j] = f[j+1];
+                f[j+1] = temp;
+            }    
+        }
+   }
+   cout << f[0]+f[1]+f[2]+f[3] << " " <<f[4]+f[1]+f[2]+f[3];
+    
+    
 
 
 
